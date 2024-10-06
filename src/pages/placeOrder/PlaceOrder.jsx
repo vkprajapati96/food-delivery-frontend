@@ -67,7 +67,7 @@ const [isRazorpayOpen,setIsRazorpayOpen] =useState(false);
   const razorpayOpen = async(e)=>{
     e.preventDefault();  
     try {
-      const response =await axios.post("http://localhost:4000/order",{amount:getTotalCartAmount()*100})
+      const response =await axios.post("https://food-delivery-backend-9x1d.onrender.com/order",{amount:getTotalCartAmount()*100})
       if (response.data.order_id) {
         setRazorpay({
           orderID:response.data.order_id,
